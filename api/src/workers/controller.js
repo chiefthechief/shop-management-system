@@ -1,11 +1,7 @@
 const queries = require("./queries");
 const pool = require("../db");
-const hasher = require("bcrypt")
-
-function hash_pass(pass){
-    const salt = hasher.genSaltSync();
-    return hasher.hashSync(pass, salt)
-}
+const hasher = require("../auth");
+const logIn = require("./logIn");
 
 const get_all_workers = (req, res) =>{
     pool.query(queries.get_all_workers, (err, result)=>{
@@ -25,14 +21,15 @@ const get_specific_worker = (req, res)=>{
 const add_worker = (req, res)=>{
     const{worker_id, first_name, last_name, role, dob, id_number, email, password, tel_number} = req.body;
 
-    pool.query(queries.get_specific_worker, [worker_id], (err, result)=>{
+    pool.query(queries.is_worker, [worker_id, email], (err, result)=>{
         const no_worker = result.rows.length;
         if(no_worker) res.status(401).send("Worker already exist");
-
-        pool.query(queries.add_worker,[worker_id, first_name, last_name, role, dob, id_number, email, hash_pass(password), tel_number], (err, result) =>{
+        else{
+        pool.query(queries.add_worker,[worker_id, first_name, last_name, role, dob, id_number, email, hasher.hash_pass(password), tel_number], (err, result) =>{
             if(err) throw err;
             res.sendStatus(201)
         });
+    }
     });
 }
 
@@ -47,7 +44,7 @@ const remove_worker = (req, res)=>{
  })
 }
 
-const update_student = (req, res)=>{
+const update_worker = (req, res)=>{
     const {first_name} = req.body
     const id = parseInt(req.params.id);
   
@@ -61,11 +58,14 @@ const update_student = (req, res)=>{
         });
     });
 }
+const worker_login = () =>{
+
+}
 
 module.exports = {
     get_all_workers,
     get_specific_worker,
     add_worker,
     remove_worker,
-    update_student,
+    update_worker,
 }
