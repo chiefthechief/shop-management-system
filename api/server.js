@@ -1,10 +1,12 @@
 const express = require("express");
+const workersRoutes = require("./src/workers/routes");
 
 const app = express();
 const PORT = 3000;
 
 //Main working code come in here
-
+app.use(express.json())
+app.use("/api/v1/workers",workersRoutes)
 
 
 
