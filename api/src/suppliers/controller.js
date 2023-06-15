@@ -21,12 +21,11 @@ const get_suppliers_by_id = (req, res)=>{
 }
 
 const add_supplier = (req, res) =>{
-    const id = req.params.id;
     const {supplier_id, supplier_name, contact} = req.body; 
 
     pool.query(queries.get_suppliers_by_id, [id], (err, result)=>{
         if(err) throw err;
-        if(!result.rows.length) res.status(400).send(`There is no supplier with the id of ${id}`);
+        if(!result.rows.length) res.status(400).send(`There is no supplier with the id of ${supplier_id}`);
         else{
             pool.query(queries.add_supplier, [supplier_id, supplier_name, contact], (err, result) =>{
                 if (err) throw err;
@@ -46,7 +45,7 @@ const remove_supplier = (req, res)=>{
         else{
             pool.query(queries.remove_supplier, [id], (err, result) =>{
                 if (err) throw err;
-                res.status(201).send("Supplier updated successfully");
+                res.status(201).send("Supplier removed successfully");
             });
         }
     });
@@ -62,7 +61,7 @@ const update_supplier = (req, res)=>{
         else{
             pool.query(queries.remove_supplier, [supplier_name, id], (err, result) =>{
                 if (err) throw err;
-                res.status(201).send("Supplier removed successfully");
+                res.status(201).send("Supplier updated successfully");
             });
         }
     });
