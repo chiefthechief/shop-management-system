@@ -1,9 +1,10 @@
-// const {Router} = require("express")
+const {Router} = require("express");
+const controller = require("./controller");
 
-// router = Router();
-
-
-
+router = Router();
 
 
-// module.exports = Router;
+
+
+
+module.exports = router;
