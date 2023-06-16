@@ -1,6 +1,6 @@
 const queries = require("./queries");
 const pool = require("../db");
-const hasher = require("../auth")
+const hasher = require("../../auth/auth")
 
 
 const get_all_customers = (req, res)=>{

@@ -1,7 +1,6 @@
 const queries = require("./queries");
 const pool = require("../db");
-const hasher = require("../auth");
-const logIn = require("./logIn");
+const hasher = require("../../auth/auth");
 
 const get_all_workers = (req, res) =>{
     pool.query(queries.get_all_workers, (err, result)=>{
@@ -57,9 +56,6 @@ const update_worker = (req, res)=>{
             res.status(200).send(`Worker with id ${id} has been updated successfully`);
         });
     });
-}
-const worker_login = () =>{
-
 }
 
 module.exports = {

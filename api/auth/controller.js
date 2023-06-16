@@ -1,6 +1,6 @@
-const queries = require("./queries");
-const authenticate = require("../auth");
-const pool = require("../db");
+const queries = require("../src/workers/queries");
+const authenticate = require("./auth");
+const pool = require("../src/db");
 
 const allow_worker = (req, res)=>{
     const{email, password} = req.body;
