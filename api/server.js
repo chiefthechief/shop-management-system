@@ -17,7 +17,7 @@ app.use(express.json())
 app.use("/api/v1/workers/auth", workers_auth_routes);
 app.use("/api/v1/workers",workersRoutes);
 app.use("/api/v1/customers",customersRoutes);
-//app.use("/api/v1/tellers",tellerRoutes);
+app.use("/api/v1/tellers",tellerRoutes);
 //app.use("/api/v1/deliverer",deliverRoutes);
 app.use("/api/v1/sale",saleRoutes);
 app.use("/api/v1/reciept",recieptRoutes);
