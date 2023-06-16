@@ -58,6 +58,10 @@ const add_reciept = (req, res)=>{
 });
 }
 
+const generate_reciept = ()=>{
+
+}
+
 
 
 
@@ -67,4 +71,5 @@ module.exports ={
     update_reciept,
     remove_reciept,
     add_reciept,
+    generate_reciept,
 }
