@@ -17,6 +17,8 @@ const PORT = 3000;
 
 //Main working code come in here
 app.use(express.json())
+app.use(cookieParser());
+
 app.use("/api/v1/auth/", auth_routes);
 app.use("/api/v1/workers",workersRoutes);
 app.use("/api/v1/customers",customersRoutes);
