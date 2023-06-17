@@ -12,6 +12,9 @@ const supplierRoutes = require("./src/suppliers/routes");
 const inventoryRoutes = require("./src/inventory/routes");
 const auth_routes = require("./auth/authenticate");
 
+//mart routes
+const martRoutes = require("./src/mart/routes");
+ 
 const app = express();
 const PORT = 3000;
 
@@ -20,6 +23,7 @@ app.use(express.json())
 app.use(cookieParser());
 
 app.use("/api/v1/auth/", auth_routes);
+app.use("/api/v1/mart/", martRoutes);
 app.use("/api/v1/workers",workersRoutes);
 app.use("/api/v1/customers",customersRoutes);
 app.use("/api/v1/tellers",tellerRoutes);

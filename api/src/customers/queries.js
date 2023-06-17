@@ -11,6 +11,7 @@ const customer_log_in = "SELECT * FROM customers where email=$1";
 
 
 
+
 module.exports = {
     get_all_workers,
     get_customer_by_id,
