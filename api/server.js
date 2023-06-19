@@ -1,5 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const session = require("express-session")
+const passport = require("passport");
 
 //the various routes
 const workersRoutes = require("./src/workers/routes");
@@ -21,13 +23,28 @@ const PORT = 3000;
 //Main working code come in here
 app.use(express.json())
 app.use(cookieParser());
+app.use(
+    session({
+        secret: "ALWFJNWOAJDOWA",
+        resave: false,
+        saveUninitialized: false,
+    })
+)
+
+app.use((req, res, next) =>{
+    console.log(`$(req.method):$(req.url)`);
+    next();
+})
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/api/v1/auth/", auth_routes);
 app.use("/api/v1/mart/", martRoutes);
 app.use("/api/v1/workers",workersRoutes);
 app.use("/api/v1/customers",customersRoutes);
 app.use("/api/v1/tellers",tellerRoutes);
-//app.use("/api/v1/deliverer",deliverRoutes);
+app.use("/api/v1/delivery",deliverRoutes);
 app.use("/api/v1/sale",saleRoutes);
 app.use("/api/v1/reciept",recieptRoutes);
 app.use("/api/v1/suppliers",supplierRoutes);

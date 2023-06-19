@@ -58,6 +58,8 @@ const update_worker = (req, res)=>{
     });
 }
 
+//manager should be able to schedule delivery
+
 module.exports = {
     get_all_workers,
     get_specific_worker,

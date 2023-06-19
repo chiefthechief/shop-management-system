@@ -35,6 +35,7 @@ const get_particular_product = (req, res) =>{
     })
 }
 
+//customers can buy and schedule delivery or pick up
 
 
 module.exports = {
