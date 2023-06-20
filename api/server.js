@@ -2,6 +2,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const session = require("express-session")
 const passport = require("passport");
+require("./auth/local");
 
 //the various routes
 const workersRoutes = require("./src/workers/routes");

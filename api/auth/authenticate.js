@@ -1,10 +1,11 @@
 const {Router} = require("express");
 const controller = require("./controller");
+const passport = require("passport");
 
 router = Router();
 
 //for workers
-router.post("/worker_login/", controller.allow_worker);
+router.post("/worker_login/", passport.authenticate("local"), controller.allow_worker);
 //router.get("/worker_login/");
 
 // //for customers
