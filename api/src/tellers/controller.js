@@ -7,7 +7,6 @@ const start_teller = (req, res, next)=>{
     console.log("Inside tellers");
     console.log(req.user);
     if(req.user){ 
-        res.sendStatus(200);
         next();
     }
     else res.send(401);
