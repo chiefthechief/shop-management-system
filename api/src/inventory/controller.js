@@ -20,9 +20,9 @@ const get_inventory_id = (req, res) =>{
 const add_inventory = (req, res)=>{
     const {product_id, product_name, product_qty, supplier_id, product_price} = req.body; 
 
-    pool.query(queries.get_inventory_by_id, [id], (err, result)=>{
+    pool.query(queries.get_inventory_by_id, [product_id], (err, result)=>{
         if(err) throw err;
-        if(!result.rows.length) res.status(400).send(`There is no product with the id of ${product_id}`);
+        if(result.rows.length) res.status(400).send(`There is already aproduct with the id of ${product_id}`);
         else{
             pool.query(queries.add_inventory, [product_id, product_name, product_qty, supplier_id, product_price], (err, result) =>{
                 if (err) throw err;

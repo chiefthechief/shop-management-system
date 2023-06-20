@@ -60,6 +60,9 @@ const remove_sale = (req, res)=>{
     })
 }
 
+const generate_sale_id = (customer_id)=>{
+
+}
 
 module.exports = {
     get_all_sales,
@@ -67,4 +70,5 @@ module.exports = {
     add_sale,
     update_sale,
     remove_sale,
+    generate_sale_id,
 }

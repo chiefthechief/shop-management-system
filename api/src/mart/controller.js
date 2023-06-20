@@ -1,5 +1,7 @@
 const pool = require("../db");
 const queries = require("./queries");
+const sale_queries = require("../sale/queries")
+const sale_controller = require("../sale/controller")
 
 const get_customer_wishlist = (req, res) => {
     const id = req.params.id;
@@ -35,12 +37,37 @@ const get_particular_product = (req, res) =>{
     })
 }
 
+const add_item = (req, res)=>{
+    const {customer_id, product_id, type, qty} = req.body;
+    pool.query(queries.add_item, [customer_id, product_id, type, qty], (err, result)=>{
+        if(err) throw err;
+        res.status(201).send("added succesfully");
+    })
+
+}
+
+const make_order = (req, res)=>{
+    const mode = "online";
+    const transmission = "delivery";
+    const customer_id = req.params.customer_id;
+    const gen_sale_id = sale_controller.generate_sale_id(customer_id);
+    for (items = 0 ; items < req.body.length; items ++){
+        const{product_id, qty} = req.body;
+        pool.query(sale_queries.add_sale, [gen_sale_id, product_id, qty, mode, transmission, customer_id], (err, result)=>{
+            if(err) throw err;
+            res.status(200).send("Order made successfully")
+        })
+    }
+}
+
 //customers can buy and schedule delivery or pick up
 
 
 module.exports = {
+    add_item,
     get_available_items,
     get_customer_cart,
     get_customer_wishlist,
     get_particular_product,
+    make_order,
 }
