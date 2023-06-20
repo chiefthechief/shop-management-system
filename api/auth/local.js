@@ -1,6 +1,5 @@
 const passport = require("passport");
 const worker_queries = require("../src/workers/queries");
-const customer_queries = require("../src/customers/queries")
 const authenticate = require("./auth")
 const pool = require("../src/db")
 const {Strategy} = require("passport-local");
