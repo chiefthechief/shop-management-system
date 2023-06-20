@@ -3,6 +3,8 @@ const controller = require("./controller");
 
 router = Router();
 
+
+router.use(controller.start_teller);
 router.get("/all", controller.get_all_teller_log);
 router.get("/generate_report", controller.generate_teller_report);
 router.get("/sale/:id", controller.get_teller_sale);

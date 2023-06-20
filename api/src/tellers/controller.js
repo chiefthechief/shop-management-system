@@ -1,5 +1,17 @@
 const queries = require("./queries");
+const inventory_queries = require("../inventory/queries")
 const pool = require("../db");
+
+
+const start_teller = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        res.sendStatus(200);
+        next();
+    }
+    else res.send(401);
+}
 
 const get_all_teller_log = (req, res)=>{
     pool.query(queries.get_all_teller_log, (err, result)=>{
@@ -92,4 +104,5 @@ module.exports = {
     get_teller_sale,
     get_all_teller_sales,
     get_teller_log,
+    start_teller,
 }

@@ -5,7 +5,24 @@ const authenticate = require("./auth")
 const pool = require("../src/db")
 const {Strategy} = require("passport-local");
 
+passport.serializeUser((user, done) => {
+    console.log("Serializing user");
+    console.log(user)
+    done(null, user.worker_id);
+})
 
+passport.deserializeUser((id, done)=>{
+    try{
+        pool.query(worker_queries.get_specific_worker,[id] ,(err, result) =>{
+            if(err) throw err;
+            else if(!result.rows.length) throw new Error("User not found");
+            else done(null, result.rows[0])
+        });
+    }catch(err){
+        console.log(err);
+        done(err, null);
+    }
+});
 
 
 passport.use(

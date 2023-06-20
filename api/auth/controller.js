@@ -8,6 +8,7 @@ const passport = require("passport");
 //workers log in
 const allow_worker = (req, res)=>{
     console.log("logged In");
+    res.sendStatus(200)
     // const{email, password} = req.body;
     // pool.query(queries.worker_logIn,[email] ,(err, result) =>{
     //     if (err) throw err;
