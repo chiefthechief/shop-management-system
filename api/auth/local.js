@@ -8,7 +8,7 @@ const {Strategy} = require("passport-local");
 passport.serializeUser((user, done) => {
     console.log("Serializing user");
     console.log(user)
-    done(null, user.worker_id);
+    done(null, user.ID);
 })
 
 passport.deserializeUser((id, done)=>{
