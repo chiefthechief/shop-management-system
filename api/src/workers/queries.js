@@ -4,7 +4,7 @@ const add_worker = "INSERT INTO workers(worker_id, first_name, last_name, role, 
 const remove_worker = "DELETE FROM workers WHERE worker_id=$1";
 const is_worker = "SELECT * FROM workers WHERE worker_id= $1 OR email=$2";
 const update_worker = "UPDATE workers SET first_name = $1 WHERE worker_id = $2 ";
-const worker_logIn  = "SELECT * from workers WHERE email=$1";
+const worker_logIn  = "SELECT worker_id, email, password from workers WHERE email=$1";
 
 
 module.exports = {

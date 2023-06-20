@@ -5,7 +5,7 @@ const passport = require("passport");
 router = Router();
 
 //for workers
-router.post("/worker_login/", passport.authenticate("local"), controller.allow_worker);
+router.post("/worker_login/", passport.authenticate("local"));
 //router.get("/worker_login/");
 
 // //for customers
