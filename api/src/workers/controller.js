@@ -2,6 +2,17 @@ const queries = require("./queries");
 const pool = require("../db");
 const hasher = require("../../auth/auth");
 
+
+const start_worker = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        next();
+    }
+    else res.send(401);
+}
+
+
 const get_all_workers = (req, res) =>{
     pool.query(queries.get_all_workers, (err, result)=>{
         if(err) throw err;
@@ -61,6 +72,7 @@ const update_worker = (req, res)=>{
 //manager should be able to schedule delivery
 
 module.exports = {
+    start_worker,
     get_all_workers,
     get_specific_worker,
     add_worker,

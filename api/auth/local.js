@@ -5,6 +5,7 @@ const authenticate = require("./auth")
 const pool = require("../src/db")
 const {Strategy} = require("passport-local");
 
+
 passport.serializeUser((user, done) => {
     console.log("Serializing user");
     console.log(user)

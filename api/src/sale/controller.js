@@ -2,6 +2,15 @@ const queries = require("./queries");
 const pool = require("../db");
 
 
+const start_sale = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        next();
+    }
+    else res.send(401);
+}
+
 const get_all_sales = (req, res)=>{
     pool.query(queries.get_all_sales, (err, result)=>{
         if(err) throw err;
@@ -65,6 +74,7 @@ const generate_sale_id = (customer_id)=>{
 }
 
 module.exports = {
+    start_sale,
     get_all_sales,
     get_sale_by_id,
     add_sale,

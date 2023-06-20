@@ -2,6 +2,17 @@ const queries = require("./queries");
 const pool = require("../db");
 
 
+
+const start_reciept = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        next();
+    }
+    else res.send(401);
+}
+
+
 const get_all_reciept = (req, res)=>{
     pool.query(queries.get_all_reciept, (err, result)=>{
         if(err) throw err;
@@ -66,6 +77,7 @@ const generate_reciept = ()=>{
 
 
 module.exports ={
+    start_reciept,
     get_all_reciept,
     get_reciept_id,
     update_reciept,

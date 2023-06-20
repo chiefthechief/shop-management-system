@@ -3,6 +3,7 @@ const controller = require("./controller");
 
 router = Router();
 
+router.use(controller.start_reciept);
 router.get("/all", controller.get_all_reciept);
 router.post("/add", controller.add_reciept);
 router.get("/:id", controller.get_reciept_id);

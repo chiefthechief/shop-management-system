@@ -3,6 +3,8 @@ const controller = require("./controller");
 
 router = Router();
 
+
+router.use(controller.start_supplier);
 router.get("/all", controller.get_suppliers);
 router.post("/add", controller.add_supplier);
 router.get("/:id", controller.get_suppliers_by_id);

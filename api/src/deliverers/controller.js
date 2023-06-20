@@ -2,6 +2,15 @@ const pool = require("../db");
 const queries = require("./queries");
 
 
+const start_delivery = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        next();
+    }
+    else res.send(401);
+}
+
 const log_delivery = (req, res)=>{
     const{delivery_id, deliverer_id,delivery_report, customer_id, product_id} = req.body;
     pool.query(queries.get_delivery_report_by_id, [delivery_id], (err, result)=>{
@@ -58,6 +67,7 @@ const delivery_state = (req, res) =>{
 
 
 module.exports = {
+    start_delivery,
     get_all_delivery_report,
     get_delivery_report_by_id,
     delivery_state,

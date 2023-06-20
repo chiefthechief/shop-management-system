@@ -4,23 +4,9 @@ const pool = require("../src/db");
 
 
 //workers log in
-const allow_worker = (req, res)=>{
+const login = (req, res)=>{
     console.log("logged In");
     res.sendStatus(200)
-}
-
-//customers log in
-const allow_customer = (req, res)=>{
-
-    const{email, password} = req.body;
-    pool.query(customer_queries.customer_log_in,[email] ,(err, result) =>{
-        if (err) throw err;
-        const hash_key = result.rows[0]['password'];
-        const state = authenticate.compare_pass(password, hash_key);
-        console.log(state);
-        if(state) res.status(200).send("Allowed");
-        else  res.status(401).send("disallowed");
-    })
 }
 
 //customers sign up
@@ -41,7 +27,6 @@ const sign_up_customer = (req, res)=>{
 
 
 module.exports ={
-    allow_worker,
+    login,
     sign_up_customer,
-    allow_customer,
 }

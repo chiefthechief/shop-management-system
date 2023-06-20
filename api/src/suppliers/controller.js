@@ -1,6 +1,16 @@
 const pool = require("../db");
 const queries = require("./queries");
 
+
+const start_supplier = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        next();
+    }
+    else res.send(401);
+}
+
 const get_suppliers = (req, res)=>{
     pool.query(queries.get_suppliers, (err, result) =>{
         if(err) throw err;
@@ -68,6 +78,7 @@ const update_supplier = (req, res)=>{
 }
 
 module.exports = {
+    start_supplier,
     get_suppliers,
     get_suppliers_by_id,
     remove_supplier,

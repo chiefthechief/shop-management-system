@@ -1,6 +1,16 @@
 const pool = require("../db");
 const queries = require("./queries");
 
+
+const start_inventory = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        next();
+    }
+    else res.send(401);
+}
+
 const get_inventory = (req, res) =>{
     pool.query(queries.get_inventory, (err, result) =>{
         if(err) throw err;
@@ -63,6 +73,7 @@ const update_inventory = (req, res) =>{
 
 
 module.exports = {
+    start_inventory,
     get_inventory,
     get_inventory_id,
     remove_inventory,

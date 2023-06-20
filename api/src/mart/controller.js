@@ -3,6 +3,16 @@ const queries = require("./queries");
 const sale_queries = require("../sale/queries")
 const sale_controller = require("../sale/controller")
 
+
+const start_mart = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        next();
+    }
+    else res.send(401);
+}
+
 const get_customer_wishlist = (req, res) => {
     const id = req.params.id;
     pool.query(queries.get_customer_wishlist, [id], (err, result)=>{
@@ -64,6 +74,7 @@ const make_order = (req, res)=>{
 
 
 module.exports = {
+    start_mart,
     add_item,
     get_available_items,
     get_customer_cart,

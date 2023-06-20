@@ -3,6 +3,16 @@ const pool = require("../db");
 const hasher = require("../../auth/auth")
 
 
+
+const start_customer = (req, res, next)=>{
+    console.log("Inside tellers");
+    console.log(req.user);
+    if(req.user){ 
+        next();
+    }
+    else res.send(401);
+}
+
 const get_all_customers = (req, res)=>{
     pool.query(queries.get_all_workers, (err, result)=>{
         if(err) throw err;
@@ -71,6 +81,7 @@ const update_customer =(req, res)=>{
 }
 
 module.exports = {
+    start_customer,
     get_all_customers,
     get_customer_by_id,
     add_customer,
