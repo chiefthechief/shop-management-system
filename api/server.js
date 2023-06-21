@@ -1,6 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const session = require("express-session")
+const {genFunc} = require("connect-pg-simple");
 const passport = require("passport");
 require("./auth/local");
 
@@ -17,6 +18,12 @@ const auth_routes = require("./auth/authenticate");
 
 //mart routes
 const martRoutes = require("./src/mart/routes");
+
+//working with session stores
+const postgre_sql_store = genFunc(session);
+const session_store = new postgre_sql_store({
+    conString: "postgres:/postgres:admin@localhost:5432/shopcompany"
+})
  
 const app = express();
 const PORT = 3000;
@@ -30,6 +37,7 @@ app.use(
         secret: "ALWFJNWOAJDOWA",
         resave: false,
         saveUninitialized: false,
+        store: session_store,
     })
 )
 
