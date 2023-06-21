@@ -50,6 +50,7 @@ const add_customer = (req, res)=>{
     }
     })
 }
+
 const remove_customer = (req, res)=>{
     const id = parseInt(req.params.id);
     pool.query(queries.get_customer_by_id,[id], (err, result)=>{
