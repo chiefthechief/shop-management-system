@@ -5,9 +5,8 @@ const sale_controller = require("../sale/controller")
 
 
 const start_mart = (req, res, next)=>{
-    console.log("Inside tellers");
-    console.log(req.user);
-    if(req.user){ 
+    let check_user = req.user.id.toString().slice(0,2);
+    if(check_user == '10'){ 
         next();
     }
     else res.send(401);

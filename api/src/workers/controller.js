@@ -4,9 +4,8 @@ const hasher = require("../../auth/auth");
 
 
 const start_worker = (req, res, next)=>{
-    console.log("Inside tellers");
-    console.log(req.user);
-    if(req.user){ 
+    let check_user = req.user.id.toString().slice(0,2);
+    if(check_user == '11'){ 
         next();
     }
     else res.send(401);
