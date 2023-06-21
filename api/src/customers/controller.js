@@ -37,14 +37,14 @@ const get_customer_by_id = (req, res)=>{
 }
 
 const add_customer = (req, res)=>{
-    const{customer_id, first_name, last_name, tel_number, email, password, customer_address} = req.body;
+    const{id, first_name, last_name, tel_number, email, password, customer_address} = req.body;
     const hashed = hasher.hash_pass(password);
-    pool.query(queries.exist, [customer_id, email], (err, results)=> {
+    pool.query(queries.exist, [id, email], (err, results)=> {
         console.log(results.rows)
         if(err) throw err;
         if(results.rows.length) res.status(401).send("Customer already exist");
         else{
-        pool.query(queries.add_customer, [customer_id, first_name, last_name, tel_number, email, hashed, customer_address], (err, result)=>{
+        pool.query(queries.add_customer, [id, first_name, last_name, tel_number, email, hashed, customer_address], (err, result)=>{
             if(err) throw err;
             res.status(201).send("Account created successfully!");
         })

@@ -29,13 +29,13 @@ const get_specific_worker = (req, res)=>{
 }
 
 const add_worker = (req, res)=>{
-    const{worker_id, first_name, last_name, role, dob, id_number, email, password, tel_number} = req.body;
+    const{id, first_name, last_name, role, dob, id_number, email, password, tel_number} = req.body;
 
-    pool.query(queries.is_worker, [worker_id, email], (err, result)=>{
+    pool.query(queries.is_worker, [id, email], (err, result)=>{
         const no_worker = result.rows.length;
         if(no_worker) res.status(401).send("Worker already exist");
         else{
-        pool.query(queries.add_worker,[worker_id, first_name, last_name, role, dob, id_number, email, hasher.hash_pass(password), tel_number], (err, result) =>{
+        pool.query(queries.add_worker,[id, first_name, last_name, role, dob, id_number, email, hasher.hash_pass(password), tel_number], (err, result) =>{
             if(err) throw err;
             res.sendStatus(201)
         });
