@@ -3,8 +3,9 @@ const controller = require("./controller");
 
 router = Router();
 
-router.use(controller.start_mart);
+
 router.get("/all", controller.get_available_items);
+router.use(controller.start_mart);
 router.post("/add", controller.add_item);
 router.post("/cart/checkout/:customer_id", controller.make_order)
 router.get("/product/:id", controller.get_particular_product);

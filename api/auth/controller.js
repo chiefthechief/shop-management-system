@@ -26,8 +26,10 @@ const sign_up_customer = (req, res)=>{
 }
 
 const log_out = (req, res)=>{
-    req.session.destroy;
-    res.status(200).send("Successfully logged out");
+    req.logout( (err) =>{
+        if(err) return err;
+        res.send("Log out");
+    })
 }
 
 

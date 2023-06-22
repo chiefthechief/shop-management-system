@@ -4,11 +4,13 @@ const pool = require("../db");
 
 
 const start_teller = (req, res, next)=>{
-    let check_user = req.user.id.toString().slice(0,2);
-    if(check_user == '11'){ 
-        next();
-    }
-    else res.send(401);
+    if(req.user != undefined){
+        let check_user = req.user.id.toString().slice(0,2);
+        if(check_user == '11'){ 
+            next();
+        }
+        else res.sendStatus(401);
+    }else res.sendStatus(401)
 }
 
 const get_all_teller_log = (req, res)=>{

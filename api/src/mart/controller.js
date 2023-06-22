@@ -5,11 +5,13 @@ const sale_controller = require("../sale/controller")
 
 
 const start_mart = (req, res, next)=>{
-    let check_user = req.user.id.toString().slice(0,2);
-    if(check_user == '10'){ 
-        next();
-    }
-    else res.send(401);
+    if(req.user != undefined){
+        let check_user = req.user.id.toString().slice(0,2);
+        if(check_user == '10'){ 
+            next();
+        }
+        else res.sendStatus(401);
+    }else res.sendStatus(401)
 }
 
 const get_customer_wishlist = (req, res) => {
