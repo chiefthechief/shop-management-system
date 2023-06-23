@@ -19,7 +19,15 @@ const sign_up_customer = (req, res)=>{
         else{
         pool.query(customer_queries.add_customer, [id, first_name, last_name, tel_number, email, hashed, cust_addr], (err, result)=>{
             if(err) throw err;
-            res.status(201).send("Account created successfully!");
+            const user = {
+                id : id,
+                username: email
+            }
+            req.login(user, (err) => {
+                if(err) throw err;
+                else  res.status(201).send("Account created successfully!");
+            })
+           
         })
     }
     })

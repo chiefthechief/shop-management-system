@@ -1,7 +1,8 @@
 const pool = require("../db");
 const queries = require("./queries");
-const sale_queries = require("../sale/queries")
-const sale_controller = require("../sale/controller")
+const delivery_query = require("../deliverers/queries");
+const sale_queries = require("../sale/queries");
+const sale_controller = require("../sale/controller");
 
 
 const start_mart = (req, res, next)=>{
@@ -12,6 +13,21 @@ const start_mart = (req, res, next)=>{
         }
         else res.sendStatus(401);
     }else res.sendStatus(401)
+}
+
+const log_delivery = (req, res)=>{
+    const{delivery_id, deliverer_id,delivery_report, customer_id, product_id, schedule_time} = req.body;
+    pool.query(delivery_query.get_delivery_report_by_id, [delivery_id], (err, result)=>{
+        if(err) throw err;
+        else if(result.rows.length) res.status(401).send("There is already planned delivery with such id");
+        else{
+            pool.query(queries.log_delivery,[delivery_id, deliverer_id,delivery_report, customer_id, product_id, schedule_time], (err, result)=>{
+                if(err) throw err;
+                res.status(201).send("log created successfully");
+            });
+        }
+    })
+
 }
 
 const get_customer_wishlist = (req, res) => {
@@ -82,4 +98,5 @@ module.exports = {
     get_customer_wishlist,
     get_particular_product,
     make_order,
+    log_delivery,
 }

@@ -12,20 +12,11 @@ const start_delivery = (req, res, next)=>{
     }else res.sendStatus(401)
 }
 
-const log_delivery = (req, res)=>{
-    const{delivery_id, deliverer_id,delivery_report, customer_id, product_id} = req.body;
-    pool.query(queries.get_delivery_report_by_id, [delivery_id], (err, result)=>{
-        if(err) throw err;
-        else if(result.rows.length) res.status(401).send("There is already planned delivery with such id");
-        else{
-            pool.query(queries.log_delivery,[delivery_id, deliverer_id,delivery_report, customer_id, product_id], (err, result)=>{
-                if(err) throw err;
-                res.status(201).send("log created successfully");
-            });
-        }
-    })
+//schedule delivery guys
+const schedule_deliverer = (req, res)=>{
 
 }
+
 const get_all_delivery_report = (req, res) =>{
     pool.query(queries.get_all_delivery_report, (err, result) =>{
         if(err) throw err;
@@ -72,5 +63,5 @@ module.exports = {
     get_all_delivery_report,
     get_delivery_report_by_id,
     delivery_state,
-    log_delivery,
+    schedule_deliverer,
 }
