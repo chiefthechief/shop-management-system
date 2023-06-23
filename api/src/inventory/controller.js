@@ -8,7 +8,7 @@ const multer = require("multer");
 const start_inventory = (req, res, next)=>{
     if(req.user != undefined){
         let check_user = req.user.id.toString().slice(0,2);
-        if(check_user == '11'){ 
+        if(check_user == '111'){ 
             next();
         }
         else res.sendStatus(401);

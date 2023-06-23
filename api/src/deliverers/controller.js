@@ -4,8 +4,8 @@ const queries = require("./queries");
 
 const start_delivery = (req, res, next)=>{
     if(req.user != undefined){
-        let check_user = req.user.id.toString().slice(0,2);
-        if(check_user == '11'){ 
+        let check_user = req.user.id.toString().slice(0,3);
+        if(check_user == '110'){ 
             next();
         }
         else res.sendStatus(401);
@@ -14,6 +14,13 @@ const start_delivery = (req, res, next)=>{
 
 //schedule delivery guys
 const schedule_deliverer = (req, res)=>{
+    const {deliverer_id, day_of_work} = req.body;
+    pool.query(queries.schedule_delivery, [deliverer_id, day_of_work], (err, result) =>{
+        if(err) throw err;
+        else{
+            res.status(201).send("Deliverer scheduled successfully");
+        }
+    });
 
 }
 

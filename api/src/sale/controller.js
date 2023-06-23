@@ -5,7 +5,7 @@ const pool = require("../db");
 const start_sale = (req, res, next)=>{
     if(req.user != undefined){
         let check_user = req.user.id.toString().slice(0,2);
-        if(check_user == '11'){ 
+        if(check_user == '110'){ 
             next();
         }
         else res.sendStatus(401);
