@@ -1,5 +1,8 @@
 const pool = require("../db");
 const queries = require("./queries");
+const path = require("path")
+const multer = require("multer");
+
 
 
 const start_inventory = (req, res, next)=>{
@@ -11,6 +14,20 @@ const start_inventory = (req, res, next)=>{
         else res.sendStatus(401);
     }else res.sendStatus(401)
 }
+
+let img;
+
+const storage = multer.diskStorage({
+    destination : (req, file, cb) => {
+        cb(err, "../../public/images/inventory")
+    },
+    filename: (req, file, cb) =>{
+        img = Date.now() + path.extname(file.originalname)
+        cb(err, img)
+    }
+});
+
+const upload = multer({storage: storage});
 
 const get_inventory = (req, res) =>{
     pool.query(queries.get_inventory, (err, result) =>{
@@ -35,7 +52,7 @@ const add_inventory = (req, res)=>{
         if(err) throw err;
         if(result.rows.length) res.status(400).send(`There is already aproduct with the id of ${product_id}`);
         else{
-            pool.query(queries.add_inventory, [product_id, product_name, product_qty, supplier_id, product_price], (err, result) =>{
+            pool.query(queries.add_inventory, [product_id, product_name, product_qty, supplier_id, product_price, img], (err, result) =>{
                 if (err) throw err;
                 res.status(201).send("product has been added successfully");
             });
@@ -80,4 +97,5 @@ module.exports = {
     remove_inventory,
     update_inventory,
     add_inventory,
+    upload,
 }
