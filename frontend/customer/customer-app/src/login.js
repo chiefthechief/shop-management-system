@@ -13,9 +13,9 @@ function Login (){
             <h1>LOGIN</h1>
             <form className='form-section'>
                 <div className='input-section'>
-                    <input/>
+                    <input type='email' placeholder='Enter email'/>
                     <br/>
-                    <input/>
+                    <input type='password' placeholder='Enter password'/>
                 </div>
                 <div className='exec-section'>
                     <button onClick={exec.login} className='login'><b>LOG IN</b></button>
