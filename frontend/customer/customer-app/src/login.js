@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import './login.css';
 import './index.css';
 import GreetTag from './welcome-tag';
@@ -20,7 +21,7 @@ function Login (){
                     <button onClick={exec.login} className='login'><b>LOG IN</b></button>
                     <br/>
                     <button className='sign-up'>Sign Up</button>
-                    <a href=''>Forgot Password ?</a>
+                    <Link to="/reset">Forgot password?</Link>
                 </div>
             </form>
         </div>
