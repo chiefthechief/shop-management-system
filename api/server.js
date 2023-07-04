@@ -26,7 +26,7 @@ const session_store = new postgre_sql_store({
 })
  
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 //serving up my static stuff
 app.use(express.static("./public"))
