@@ -1,9 +1,10 @@
 import React from 'react';
+import NavBar from './navbar'
 
 const Mart = () =>{
     return (
         <div className='Mart'>
-            <h2>Our store</h2>
+             <NavBar/>
         </div>
     );
 }

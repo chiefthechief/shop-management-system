@@ -1,14 +1,16 @@
 import React from 'react';
 import './login.css';
 import './index.css';
-import GreetTag from './welcome-tag';
+import logo from './img/shop.svg';
 const exec = require("./execution");
 
 
 function Reset (){
     return (
         <div className='page'>
-            <GreetTag name="to SH"/>
+            <div className='logo'>
+                <img src={logo} alt='logo'/>
+            </div>
             <h1>Reset Password</h1>
             <form className='form-section'>
                 <div className='input-section'>

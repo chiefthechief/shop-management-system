@@ -1,6 +1,5 @@
 import React from "react"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import NavBar from "./navbar";
 import Mart from './mart'
 import Login from './login';
 import SignUp from "./signup";
@@ -11,7 +10,6 @@ function App() {
     return(
         <Router>
         <div className="App">
-            <NavBar/>
         <div className="Content">
             <Routes>
                 <Route path="/signup" element={<SignUp/>}/>
