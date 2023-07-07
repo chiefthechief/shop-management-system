@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import {Link} from "react-router-dom";
 import './login.css';
 import './index.css';
@@ -8,7 +9,7 @@ const exec = require("./execution");
 
 function Login (){
     return (
-        <div className='page'>
+        <div className='page' onSubmit={exec.login}>
             <GreetTag name="to SH"/>
             <h1>LOGIN</h1>
             <form className='form-section'>
@@ -18,12 +19,15 @@ function Login (){
                     <input type='password' placeholder='Enter password'/>
                 </div>
                 <div className='exec-section'>
-                    <button onClick={exec.login} className='login'><b>LOG IN</b></button>
+                    <button type='submit' className='login'><b>LOG IN</b></button>
                     <br/>
-                    <button className='sign-up'>Sign Up</button>
-                    <Link to="/reset">Forgot password?</Link>
                 </div>
             </form>
+            <button className='sign-up' onClick={()=>{
+                // const navigate = useNavigate;
+                // navigate('/signup')
+            }}>Sign Up</button>
+            <Link to="/reset">Forgot password?</Link>
         </div>
     );
 }

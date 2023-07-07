@@ -44,8 +44,8 @@ button {
   padding: 0.5px;
 }
 
-.greeting h2{
-  margin-top: 5px;
+.greeting h2, h3{
+  margin: 0;
 }
 
 .input-section{

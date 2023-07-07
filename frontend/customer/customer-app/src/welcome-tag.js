@@ -5,7 +5,8 @@ import './login.css'
 function GreetTag (props){
     return(
         <div className='greeting'>
-            <h2>Welcome {props.name}</h2>
+            <h2>Welcome </h2>
+            <h3>{props.name}</h3>
         </div>
     );
 }
