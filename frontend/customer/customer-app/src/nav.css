@@ -9,6 +9,11 @@ a{
     font-size: 24px;
 }
 
+.links a:hover{
+    color:burlywood;
+    font-size: 25px;
+}
+
 .links{
     float: right;
     margin: 15px;
