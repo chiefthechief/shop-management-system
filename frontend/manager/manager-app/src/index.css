@@ -1,31 +1,5 @@
-
-
 * {
     margin:0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #333;
-}
-
-.nav-bar a{
-  text-decoration: none;
-  color: #222;
-  margin: 5px;
-  font-size: 24px;
-}
-
-.links{
-  float: right;
-  margin: 15px;
-}
-
-.links a:hover{
-  font-size: 25px;
-  color:#f6e572;
-}
-
-.nav-bar{
-  position: absolute;
-  top: 0;
-  height:10%;
-  width: 100%;
 }

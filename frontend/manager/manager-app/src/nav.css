@@ -1,0 +1,50 @@
+.links{
+    position: absolute;
+    float: right;
+    right: 0;
+
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: #222;
+    margin: 5px;
+    font-size: 24px;
+    background-color: white;
+  }
+  
+  .links{
+    float: right;
+    margin: 15px;
+  }
+  
+  .links a:hover{
+    font-size: 25px;
+    color:#f6e572;
+  }
+  
+  .nav-bar{
+    position: absolute;
+    top: 0;
+    height:10%;
+    width: 100%;
+  }
+
+.logo{
+    position: absolute;
+    float: left;
+    left: 0%;
+}
+
+.nav-bar a:active{
+    background-color: #fbe20d;
+    color: #fbe20d;
+}
+
+.logo img{
+    position: absolute;
+    float: left;
+    left: 0%;
+    height: 100px;
+    width: 100px;
+}

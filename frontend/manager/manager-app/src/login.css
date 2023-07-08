@@ -4,7 +4,7 @@
     width:30%;
     padding: 10px;
     left:35%;
-    top: 18%;
+    top: 5%;
   }
   
   a {
@@ -18,6 +18,8 @@
     background-color: #f3f3f3;
     height: 45px;
     margin: 5px;
+    border: 0;
+    padding-left: 5%;
   }
   
   button {
@@ -25,6 +27,11 @@
     border-radius: 20px;
     height: 50px;
     margin: 5px;
+    border: 0;
+  }
+
+  h1 {
+    font-size: 200%;
   }
   
   .login {
@@ -42,6 +49,7 @@
     height: 60px;
     border-radius: 5px;
     padding: 0.5px;
+    margin-bottom: 2%;
   }
   
   .greeting h2{
