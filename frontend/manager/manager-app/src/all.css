@@ -2,14 +2,74 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-.content{
+.inventory-content{
     position: absolute;
     top: 10%;
-    /* background-color: #fbe20d; */
     height: 100%;
     width: 100%;
 }
+
+.sales .header{
+    position: absolute;
+    top: 10%;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    margin: 0;
+}
+.sales-content{
+    position: absolute;
+    top: 20%;
+    height: 80%;
+    width: 95%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.sales-content .range{
+    position: absolute;
+    float: left;
+    left: 0;
+    padding-top: 5%;
+    top:0%;
+    width: 20%;
+    height: 90%;
+    margin: 0;
+}
+
+.sales-content .range button{
+    border-radius: 50px 50px 50px 50px;
+    background-color: white;
+    color: black;
+    height: 8%;
+    width: 100%;
+    margin-right: 1%;
+    margin-bottom: 8%;
+    box-shadow: 2px 10px 20px #878785;
+}
+
+.sales-content .dashboard{
+    position: absolute;
+    float: right;
+    right: 0;
+    top:0;
+    width: 75%;
+    height: 90%;
+    box-shadow: -6px 10px 10px #f3f3f3;
+}
+
+.sales-content .dashboard .greeting{
+   position: absolute;
+   text-align: center;
+   padding: 0;
+   width: 30%;
+   height: 8%;
+   left: 35%;
+}
+
+.sales-content .dashboard .greeting h2{
+   margin: 0;
+ }
 
 .search-space{
     position: absolute;
@@ -108,3 +168,90 @@ input:active{
     width: 100%;
     height: 10%;
 }
+
+.teller-content{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.teller-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    height: 10%;
+}
+
+.teller-rep{
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    width: 95%;
+    height:90%;
+    padding: 0%;
+}
+
+.teller-rep .tabs{
+    float: left;
+    height: 25%;
+    width: 15%;
+    margin-left: 3%;
+    margin-right: 2%;
+    margin-bottom: 4%;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 8px 5px #878785;
+    padding-top: 4%;
+    padding-left: 2%;
+}
+
+.customers .header{
+    position: absolute;
+    top: 10%;
+    height: 6%;
+    width: 95%;
+    left: 0;
+    text-align: center;
+}
+
+.customer-content{
+    position: absolute;
+    top: 18%;
+    height: 82%;
+    width: 95%;
+}
+
+.customer-content .customer-rep{
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+}
+
+.customer-content .customer-details{
+    position: absolute;
+    float: right;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 75%;
+    box-shadow: -6px 10px 10px #f3f3f3;
+}
+
+.customer-content .customer-details .greeting{
+    position: absolute;
+    text-align: center;
+    padding: 0;
+    width: 30%;
+    height: 8%;
+    left: 35%;
+ }
+ 
+ .customer-content .customer-details .greeting h2{
+    margin: 0;
+  }

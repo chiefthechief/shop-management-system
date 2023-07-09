@@ -26,6 +26,8 @@
   .nav-bar{
     position: absolute;
     top: 0;
+    float: right;
+    right: 0;
     height:10%;
     width: 100%;
   }
@@ -34,10 +36,10 @@
     position: absolute;
     float: left;
     left: 0%;
+    width: 10%;
 }
 
 .nav-bar a:active{
-    background-color: #fbe20d;
     color: #fbe20d;
 }
 

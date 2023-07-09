@@ -1,11 +1,22 @@
 import React from 'react';
 import Navbar from './navbar';
+import GreetTag from './welcome-tag';
 
 function Customer (){
     return(
-        <div className='customer'>
+        <div className='customers'>
             <Navbar/>
-            <h2>This is customer</h2>
+            <div className='header'>
+                    <h1>Customer</h1>
+                </div>
+            <div className='customer-content'>
+                <div className='customer-rep'>
+
+                </div>
+                <div className='customer-details'>
+                    <GreetTag greeting="Customer Details"/>
+                </div>
+            </div>
         </div>
     );
 }

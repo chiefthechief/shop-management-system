@@ -12,7 +12,7 @@ function Inventory (){
     return(
         <div className='inventory'>
             <Navbar/>
-            <div className='content'>
+            <div className='inventory-content'>
                 <form className='search-space'>
                     <input type='text' placeholder='Search Inventory' required="true"/>
                     <button><img src={search} alt='search'/></button>
