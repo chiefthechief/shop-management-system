@@ -5,8 +5,38 @@
 .inventory-content{
     position: absolute;
     top: 10%;
-    height: 100%;
+    height: 90%;
     width: 100%;
+}
+
+.inventory-content .top{
+    position: fixed;
+    top: 10%;
+    height: 6% ;
+    width: 100%;
+}
+
+.inventory-products{
+    position: absolute;
+    top: 16%;
+    left: 10%;
+    height: 84%;
+    width: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.inventory-products .tab{
+    float: left;
+    height: 22%;
+    width: 10%;
+    margin-right: 2%;
+    margin-bottom: 4%;
+    background-image: linear-gradient(to bottom ,#fbe20d, #988716);
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 8px 5px #878785;
+    padding-top: 1%;
+    padding-left: 2%;
 }
 
 .sales .header{
@@ -17,6 +47,7 @@
     height: 10%;
     margin: 0;
 }
+
 .sales-content{
     position: absolute;
     top: 20%;
@@ -76,7 +107,7 @@
     top: 2%;
     left: 35%;
     width: 30%;
-    height: 6%;
+    height: 100%;
     border-radius: 50px 50px 50px 50px;
     background-color: aliceblue;
     padding: 0;
@@ -89,7 +120,7 @@
     right: 0;
     margin-right: 2%;
     padding: 0%;
-    height:6%;
+    height:100%;
     width: 4%;
     border-radius: 15px;
 }
@@ -230,12 +261,14 @@ input:active{
     top: 14%;
     left: 0;
     height: 86%;
-    width: 20%;
+    width: 25%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .customer-content .customer-rep button{
-    width: 100%;
-    margin-left: 12%;
+    width: 85%;
+    margin-left: 8%;
     margin-bottom: 5%;
     height: 7%;
     background-color: #ffff;

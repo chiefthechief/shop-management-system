@@ -4,7 +4,7 @@ import GreetTag from './welcome-tag';
 
 function Customer (){
     const customer_list = () =>{
-        let customer = ["Kofi", "Ama", "Kwame"];
+        let customer = ["Kofi", "Ama", "Kwame","Kofi", "Ama", "Kwame","Kofi", "Ama", "Kwame","Kofi"];
         
         return customer;
     }

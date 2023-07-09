@@ -5,6 +5,7 @@ function Supplier (){
     return(
         <div className='suppliers'>
             <Navbar/>
+            
             <h2>This is Supplier</h2>
         </div>
     );
