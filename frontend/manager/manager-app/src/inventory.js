@@ -23,7 +23,7 @@ function Inventory (){
 
     return(
         <div className='inventory'>
-            <Navbar/>
+            <Navbar title='INVENTORY'/>
             <div className='inventory-content'>
                 <div className='top'>
                 <form className='search-space'>

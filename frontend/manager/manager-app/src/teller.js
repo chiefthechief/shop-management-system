@@ -16,11 +16,8 @@ function Teller (){
     }
     return(
         <div className='tellers'>
-            <Navbar/>
+            <Navbar title='TELLERS'/>
             <div className='teller-content'>
-                <div className='teller-header'>
-                    <h1>TELLERS</h1>
-                </div>
                 <div className='teller-rep'>
                     {
                     load_tellers().map((item, index) =>

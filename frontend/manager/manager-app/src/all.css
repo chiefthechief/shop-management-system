@@ -297,3 +297,131 @@ input:active{
  .customer-content .customer-details .greeting h2{
     margin: 0;
   }
+
+  .supplier-content{
+    position: absolute;
+    top: 20%;
+    width: 92%;
+    height: 80%;
+    margin-left: 8%;
+  }
+
+  .supplier-content .supplier-product{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    float: left;
+    width: 35%;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .supplier-content .supplier-name{
+    position: absolute;
+    top: 0%;
+    left: 33%;
+    height: 100%;
+    float: left;
+    width: 35%;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .supplier-content .supplier-contact{
+    position: absolute;
+    top: 0%;
+    left: 66%;
+    height: 100%;
+    float: left;
+    width: 35%;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-right: 3%;
+  }
+
+  .dashboard-dashboard{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    padding-left: 15%;
+  }
+
+  .delivery-delivery{
+    position: absolute;
+    top: 17%;
+    left: 0;
+    width: 95%;
+    height: 83%;
+    margin-left: 3%;
+  }
+
+  .delivery-content{
+    top: 0%;
+    position: absolute;
+    margin-left: 0;
+    width: 95%;
+  }
+
+  .delivery-content .delivery-id{
+    position: absolute;
+    float: left;
+    left: 0;
+    top: 0;
+    margin-right: 0;
+    width: 15%;
+  }
+
+  .delivery-content .deliverer-name{
+    position: absolute;
+    float: left;
+    left: 15%;
+    top: 0;
+    margin-right: 0;
+    width: 15%;
+  }
+
+  .delivery-content .customer-name{
+    position: absolute;
+    float: left;
+    left: 30%;
+    top: 0;
+    margin-right: 0;
+    width: 15%;
+  }
+
+  .delivery-content .customer-location{
+    position: absolute;
+    float: left;
+    left: 45%;
+    top: 0;
+    margin-right: 0;
+    width: 15%;
+  }
+
+  .delivery-content .order-number{
+    position: absolute;
+    float: left;
+    left: 60%;
+    top: 0;
+    margin-right: 0;
+    width: 15%;
+  }
+
+  .delivery-content .order-progress{
+    position: absolute;
+    float: left;
+    left: 75%;
+    top: 0;
+    margin-right: 0;
+    width: 15%;
+  }
+
+  .delivery-content .customer-progress{
+    position: absolute;
+    float: left;
+    left: 90%;
+    top: 0;
+    margin-right: 0;
+    width: 15%;
+  }

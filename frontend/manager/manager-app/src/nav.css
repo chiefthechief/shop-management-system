@@ -1,28 +1,56 @@
-.links{
+  .drop-down{
+    float: right; 
+    overflow: hidden;
+    margin-top: 0.5%;
+    margin-right: 2%;
+  }
+
+  .drop-down .drop-btn{
+    width: 5%;
+    font-size: 16px;
+    border-radius: 2px, 2px, 2px, 2px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .nav-bar button{
     position: absolute;
+  }
+  .nav-bar a:hover, .drop-down:hover{
+    color: #fbe20d;
+  } 
+
+  .drop-down-content{
     float: right;
-    right: 0;
+    right: -2%;
+    top: 800%;
+    display: none;
+    position: absolute;
+    background-color: #f3f3f3;
+    border-radius: 10px 10px 10px 10px;
+    width: 10%;
+    padding: 1%;
+  }
 
-}
-
-.nav-bar a{
+  .drop-down-content a{
+    float: none;
+    color: black;
     text-decoration: none;
-    color: #222;
-    margin: 5px;
-    font-size: 24px;
-    background-color: white;
+    display: block;
+    margin-bottom: 1%;
+    text-align: left;
   }
-  
-  .links{
-    float: right;
-    margin: 15px;
+
+  .drop-down-content a:hover{
+    background-color: #f3f3f3;
   }
-  
-  .links a:hover{
-    font-size: 25px;
-    color:#f6e572;
+
+  .drop-down:hover .drop-down-content{
+    display: block;
+    float: left;
   }
-  
+
   .nav-bar{
     position:fixed;
     top: 0;
@@ -30,6 +58,15 @@
     right: 0;
     height:10%;
     width: 100%;
+    z-index: 7;
+  }
+
+  .nav-bar .nav-header{
+    position: absolute;
+    float: right;
+    right: 4%;
+    width: 90%;
+    height: 10%;
   }
 
 .logo{
@@ -49,4 +86,13 @@
     left: 0%;
     height: 100px;
     width: 100px;
+}
+
+.nav-header .title{
+  position: absolute;
+  top: 0%;
+  float: left;
+  left :35%;
+  text-align: center;
+  font-size: 35px;
 }

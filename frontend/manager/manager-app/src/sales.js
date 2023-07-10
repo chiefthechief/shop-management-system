@@ -5,10 +5,7 @@ import GreetTag from './welcome-tag'
 function Sales (){
     return(
         <div className='sales'>
-            <Navbar/>
-            <div className='header'>
-               <h1>SALES</h1>
-            </div>
+            <Navbar title="SALES"/>
             <div className='sales-content'>
                 <div className='range'>
                     <button>DAILY</button>

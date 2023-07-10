@@ -4,16 +4,13 @@ import GreetTag from './welcome-tag';
 
 function Customer (){
     const customer_list = () =>{
-        let customer = ["Kofi", "Ama", "Kwame","Kofi", "Ama", "Kwame","Kofi", "Ama", "Kwame","Kofi"];
+        let customer = ["Kofi", "Kwame"];
         
         return customer;
     }
     return(
         <div className='customers'>
-            <Navbar/>
-            <div className='header'>
-                    <h1>Customer</h1>
-                </div>
+            <Navbar title="CUSTOMERS"/>
             <div className='customer-content'>
                 <div className='customer-rep'>
                     {
