@@ -1,8 +1,13 @@
 import React from 'react';
+// import {useNavigate} from 'react-router-dom';
 import Navbar from './navbar';
-import GreetTag from './welcome-tag'
+import GreetTag from './welcome-tag';
+import Display from './sales_display';
 
 function Sales (){
+
+    // const navigate = useNavigate()
+
     return(
         <div className='sales'>
             <Navbar title="SALES"/>
@@ -15,6 +20,7 @@ function Sales (){
                 </div>
                 <div className='dashboard'>
                     <GreetTag greeting="DASHBOARD"/>
+                        <Display/>
                 </div>
             </div>
         </div>

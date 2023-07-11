@@ -3,12 +3,34 @@ import Navbar from './navbar';
 
 function Delivery (){
 
+    const done = {
+        backgroundColor:"#41ef7a"             
+    }
+   const progress = {
+       backgroundColor:"#d0ef41"             
+    }
+    const yet = {
+        backgroundColor:"#ef4149",
+        color: "#fff"         
+    }
+
+    const bg_color = (statement) =>{
+        if(statement === "Done"){
+            return done
+        }else if(statement === "in-progress"){
+            return progress
+        }else{
+            return yet
+        }
+    }
+
     const delivery = () =>{
+
         let id = ["1234", "6789", "4387"];
         let deliverer = ["Kwame", "Akwasi", "Kwadwo"];
         let customer = ["Doug", "Peter", "alb"];
         let location = ["Odorkor", "Awoshie", "Kumasi"];
-        let order_number = ["q213", "1331", "314", "3414"];
+        let order_number = ["q213", "1331", "314"];
         let order_progress = ["Done", "Not yet", "in-progress"];
         let order_progress_c = ["Done", "Not yet", "in-progress"];
 
@@ -76,7 +98,7 @@ function Delivery (){
                    <h3>Order Progress</h3>
                     {
                         delivery()["order_progress"].map((items, index) =>(
-                            <p >{items}</p>
+                            <b><p style={bg_color(items)}>{items}</p></b>
                         ))
                     }
                 </div>
@@ -84,7 +106,7 @@ function Delivery (){
                    <h3>Customer Feedback</h3>
                     {
                         delivery()["customer_progress"].map((items, index) =>(
-                            <p>{items}</p>
+                            <b><p style={bg_color(items)}>{items}</p></b>
                         ))
                     }
                 </div>
